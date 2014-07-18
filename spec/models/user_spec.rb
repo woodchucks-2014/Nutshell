@@ -17,6 +17,11 @@ describe User do
       expect{@user.save!}.to raise_error #Bang here returns an error.
     end
 
+    it "raises an error if user password and confirmation do not pass." do
+      @user = FactoryGirl.build(:user, password: "lol")
+      expect{@user.save!}.to raise_error
+    end
+
     xit "does not allow profanity to be used in first name field" do
       # pending "Just in case we have time to implement this"
     end

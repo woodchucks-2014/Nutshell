@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rails_helper'
 
-RSpec.describe Comment, :type => :model do
+describe Comment do
   let(:comment) {Comment.create(content: "I am a comment")}
 
   it "creates a comment with text" do

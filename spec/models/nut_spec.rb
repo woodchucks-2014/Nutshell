@@ -13,7 +13,7 @@ describe Nut do
     expect(test_nut.content).to eq "my day sucked. I had to parse a broken csv file :("
   end
 
-  it "returns a valid url" do
-    expect(test_nut.url).to include("https://secure.gravatar.com/avatar/") #This most likely is not an accurate test. You guys should modify to suit your needs.
+  it "returns an array of links for the user." do
+    expect(test_nut.url).to be_kind_of Array# You guys should may need modify to suit your needs.
   end
 end

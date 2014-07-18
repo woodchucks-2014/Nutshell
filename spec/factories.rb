@@ -8,7 +8,7 @@ FactoryGirl.define do
 
   factory :nut do
     content "my day sucked. I had to parse a broken csv file :("
-    url "www.google.com" #Probably need to change this.
+    url "https://secure.gravatar.com/avatar/" #Probably need to change this.
     user
   end
 

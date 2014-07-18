@@ -14,6 +14,6 @@ describe Nut do
   end
 
   it "returns a valid url" do
-    expect(test_nut.url).to eq "www.google.com" #This most likely is not an accurate test. You guys should modify to suit your needs.
+    expect(test_nut.url).to include("https://secure.gravatar.com/avatar/") #This most likely is not an accurate test. You guys should modify to suit your needs.
   end
 end

@@ -11,10 +11,11 @@ describe User do
     expect(user).to be_instance_of(User)
   end
   context "validations"
-    # it "creates a user with a valid email address" do
-    #   pending "Not working as of now"
-    #   expect{bad_email}.to raise_error
-    # end
+
+    it "creates a user with a valid email address" do
+      @user = FactoryGirl.build(:user, email: "lol")
+      expect{@user.save!}.to raise_error #Bang here returns an error.
+    end
 
     xit "does not allow profanity to be used in first name field" do
       # pending "Just in case we have time to implement this"

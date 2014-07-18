@@ -4,8 +4,6 @@ require 'rails_helper'
 
 describe User do
   let(:user) {FactoryGirl.create :user}
-  # let(:bad_email) {User.create(first_name: "test", email: "test.com",
-  #                         username: "testy", password: "test")}
 
   it "creates a user with a first name, email, username, and password" do
     expect(user).to be_instance_of(User)

@@ -20,6 +20,7 @@ group :development, :test do
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'shoulda-matchers', require: false
 end
 # gem 'therubyracer',  platforms: :ruby
 # Use jquery as the JavaScript library

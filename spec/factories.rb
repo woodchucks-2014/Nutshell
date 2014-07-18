@@ -3,6 +3,7 @@ FactoryGirl.define do
     first_name "Joe"
     email {Faker::Internet.email}
     password "password"
+    password_confirmation "password"
   end
 
   factory :nut do
@@ -13,6 +14,6 @@ FactoryGirl.define do
 
   factory :comment do
     content "lol parsing csv is the worst. u must be super smart and kool though, let's hang out and drink fernet branca soon."
-    association :commenter, factory: :user, strategy: :build
+    user
   end
 end

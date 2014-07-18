@@ -1,0 +1,2 @@
+class NutsController < ApplicationController
+end

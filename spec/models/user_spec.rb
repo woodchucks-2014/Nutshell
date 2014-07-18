@@ -4,16 +4,19 @@ require 'rails_helper'
 
 RSpec.describe User, :type => :model do
   let(:user) {User.create(first_name: "test", email: "test@test.com",
+                          username: "testy", password: "test", password_confirmation: "test")}
+  let(:bad_email) {User.create(first_name: "test", email: "test.com",
                           username: "testy", password: "test")}
 
   it "creates a user with a first name, email, username, and password" do
     expect(user).to be_instance_of(User)
   end
   context "validations"
-    xit "creates a user with a valid email address"
-    xit "raises an error when first name is not included"
-    xit "raises an error when email is not included"
-    xit "raises an error when password is not included"
+    it "creates a user with a valid email address" do
+      pending "Not working as of now"
+      expect{bad_email}.to raise_error
+    end
+
     xit "does not allow profanity to be used in first name field"
 
 end

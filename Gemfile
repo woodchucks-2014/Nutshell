@@ -17,6 +17,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # Rspec
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'shoulda-matchers', require: false
 end
 # gem 'therubyracer',  platforms: :ruby
 # Use jquery as the JavaScript library
@@ -33,6 +37,9 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

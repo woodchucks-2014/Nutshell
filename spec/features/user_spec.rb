@@ -1,5 +1,5 @@
 #borrowed from Ben/Adrian feature test exercise
-
+require 'capybara/rspec'
 require 'spec_helper'
 
 feature 'User browsing the website' do

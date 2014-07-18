@@ -17,6 +17,7 @@ RSpec.describe User, :type => :model do
       expect{bad_email}.to raise_error
     end
 
-    xit "does not allow profanity to be used in first name field"
-
+    it "does not allow profanity to be used in first name field" do
+      pending "Just in case we have time to implement this"
+    end
 end

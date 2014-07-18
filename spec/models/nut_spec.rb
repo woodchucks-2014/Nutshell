@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe Nut, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:test_nut) {Nut.create(content: "Test nut", url: "www.nut.eat")}
+
+  it "creates a nut with either text or a photo url" do
+
+  end
 end

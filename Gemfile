@@ -18,7 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'faker'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'capybara'
 end
 # gem 'therubyracer',  platforms: :ruby

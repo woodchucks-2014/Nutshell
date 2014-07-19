@@ -13,7 +13,7 @@ include UsersHelper
       # redirect_to user_path(@user), flash: {notice: "Successful log in!"}
       redirect_to nuts_path, flash: {notice: "Successful log in!"}
     else
-      redirect_to users_path, flash: {notice: 'Invalid credentials!' }
+      redirect_to users_path, flash: {notice: 'Invalid Credentials!' }
     end
   end
 

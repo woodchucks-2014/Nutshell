@@ -13,33 +13,67 @@ feature 'ability to sign up as a user' do
   scenario 'user fills out sign up form without errors' do
     visit users_path
     click_link 'Sign Up!'
-    fill_in 'First name', with: 'Ben'
-    fill_in 'username', with: 'RJNY'
-    fill_in 'Email', with: 'ben.brostoff@gmail.com'
+    fill_in 'First name', with: 'Kai'
+    fill_in 'username', with: 'KPRT'
+    fill_in 'Email', with: 'kai.prout@gmail.com'
     fill_in 'Password', with: 'test'
     fill_in 'Password Confirmation', with: 'test'
     click_button 'Sign Me Up!'
 
-    user = User.find_by_email('ben.brostoff@gmail.com')
+    user = User.find_by_email('kai.prout@gmail.com')
 
-    expect(current_path).to eq(user_path(user))
-    expect(page).to have_content("Successful log in!")
+    expect(current_path).to eq(nuts_path)
+    expect(page).to have_content("Welcome #{user.first_name}")
   end
 
-  scenario "can click on titles of recent posts and should be on the post show page" do
-    pending
-    # given a user and a list of posts
-    # user visits the homepage
-    # when a user can clicks on a post title they should be on the post show page
+  scenario "user fills out form with invalid credentials" do
+    visit users_path
+    click_link 'Sign Up!'
+    fill_in 'First name', with: 'Kai'
+    fill_in 'Email', with: 'kai.prout@gmail.com'
+    fill_in 'Password', with: 'test'
+    fill_in 'Password Confirmation', with: 'test'
+    click_button 'Sign Me Up!'
+
+    expect(current_path).to eq(new_user_path)
+    expect(page).to have_content('Failed')
+
+  end
+end
+
+feature "ability to sign in as a user" do
+
+  let(:user) { FactoryGirl.create :user}
+
+  scenario "existing user fills out form with invalid credentials" do
+    visit root_path
+    fill_in 'username', with: user.username
+    fill_in 'Password', with: user.password
+    click_button 'Log In'
+    expect(current_path).to eq(nuts_path)
+    expect(page).to have_content("Welcome #{user.first_name}")
+  end
+
+    scenario "existing user fills out form with invalid credentials" do
+      visit root_path
+      fill_in 'username', with: user.username
+      fill_in 'Password', with: 'test2'
+      click_button 'Log In'
+      expect(current_path).to eq(users_path)
+      expect(page).to have_content("Invalid Credentials")
   end
 end
 
-context "post show page" do
-  it "sees title and body of the post" do
-    pending
-    # given a user and post(s)
-    # user visits the post show page
-    # user should see the post title
-    # user should see the post body
-  end
-end
+
+
+
+
+
+
+
+
+
+
+
+
+

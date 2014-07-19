@@ -45,7 +45,7 @@ feature "ability to sign in as a user" do
 
   let(:user) { FactoryGirl.create :user}
 
-  scenario "existing user fills out form with invalid credentials" do
+  scenario "existing user fills out form with valid credentials" do
     visit root_path
     fill_in 'username', with: user.username
     fill_in 'Password', with: user.password
@@ -62,6 +62,32 @@ feature "ability to sign in as a user" do
       expect(current_path).to eq(users_path)
       expect(page).to have_content("Invalid Credentials")
   end
+end
+
+feature "ability to log out as an existing user" do
+
+  let(:user) { FactoryGirl.create :user}
+
+  scenario "existing user hits 'sign out' link to sign out" do
+    visit root_path
+    fill_in 'username', with: user.username
+    fill_in 'Password', with: user.password
+    click_button 'Log In'
+    click_link 'Sign Out'
+    expect(current_path).to eq(root_path)
+
+  end
+
+end
+feature "ability to view user profile page" do
+
+  let(:user) { FactoryGirl.create :user}
+
+  scenario "when user successfully logs in" do
+    visit nuts_path
+  end
+
+  scenario ""
 end
 
 

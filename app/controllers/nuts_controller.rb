@@ -20,10 +20,10 @@ class NutsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @nut = Nut.new(content: params[:content], url: params[:url], user_id: params[@user.id])
+    @user = User.find(session[:user_id])
+    @nut = Nut.new(content: params[:content], url: [params[:url]], user_id: params[@user.id])
     if @nut.save
-      redirect_to users_path(@user) flash: {notice: "You just created a Nutshell!"}
+      redirect_to users_path(@user), flash: {notice: "You just created a Nutshell!"}
     else
       redirect_to new_nut_path
     end

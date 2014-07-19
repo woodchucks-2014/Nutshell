@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe NutsController, :type => :controller do
+describe NutsController, :type => :controller do
 
 end

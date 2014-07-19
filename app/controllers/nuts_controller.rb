@@ -8,4 +8,7 @@ class NutsController < ApplicationController
       redirect_to :root
     end
   end
+
+  def show
+  end
 end

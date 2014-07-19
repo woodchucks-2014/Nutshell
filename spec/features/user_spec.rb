@@ -82,9 +82,11 @@ end
 feature "ability to view user profile page" do
 
   let(:user) { FactoryGirl.create :user}
+  let(:nut) {FactoryGirl.create :nut}
 
-  scenario "when user successfully logs in" do
+  scenario "sees one's own nutshells upon viewing profile page" do
     visit nuts_path
+    expect(page).to have_content(nut.content)
   end
 
 

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/dncrht/imgur.git
+  revision: 61ca22b6fa83d58e4038563226614da2bd103325
+  specs:
+    imgur (1.0.1)
+      json (>= 1.6.4)
+      oauth (>= 0.4.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,6 +79,7 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
+    oauth (0.4.7)
     pg (0.17.1)
     polyglot (0.3.5)
     rack (1.5.2)
@@ -157,6 +166,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   faker
+  imgur!
   jbuilder (~> 2.0)
   jquery-rails
   pg

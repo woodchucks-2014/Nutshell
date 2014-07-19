@@ -1,7 +1,9 @@
 <h1>Welcome <%= @user.first_name %></h1>
 <br>
 <% @nuts.each do |nut| %>
+  <h2><%= link_to nut.user.first_name, @user %></h2> <br>
   <% nut.url.each do |image| %>
-    <%= image_tag "#{image}" %>
+    <%= image_tag image, {height: 128} %>
   <% end %>
+  <br>
 <% end %>

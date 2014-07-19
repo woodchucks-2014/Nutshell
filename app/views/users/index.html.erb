@@ -1,7 +1,21 @@
 <h1>
 Hello team nutshell!
+<%= session[:user_id]%>
 </h1>
 
-<%= link_to 'Sign Up!', new_user_path %>
+<%= link_to 'Sign Up!', new_user_path %> <br>
+or sign in
 
-<%#= link_to 'Show', article_path(article) %>
+<%= form_for :user,  url: {action: "login"} do |f| %>
+
+    <%= f.label :username, "username" %><br />
+    <%= f.text_field :username, placeholder: "Benzen" %><br>
+
+    <%= f.label :password %><br />
+    <%= f.password_field :password, placeholder: "Password"  %><br>
+
+    <div class="text-center">
+      <%= f.submit "Sign Me In!"%>
+    </div>
+
+<% end %>

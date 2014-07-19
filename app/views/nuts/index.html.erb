@@ -2,6 +2,7 @@ Welcome <%= @user.first_name %>
 <br>
 <% @nuts.each do |nut| %>
   <% nut.url.each do |image| %>
-    <%= image_tag "#{image}" %>
+    <%= image_tag image %>
   <% end %>
+  <br>
 <% end %>

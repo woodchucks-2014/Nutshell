@@ -29,9 +29,10 @@ include UsersHelper
   end
 
   def show
-    if !session[:user_id]
+    if !current_user
       redirect_to :root
     end
+    p params
     @user = User.find(params[:id])
   end
 

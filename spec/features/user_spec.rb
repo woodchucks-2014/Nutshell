@@ -87,7 +87,7 @@ feature "ability to view user profile page" do
     visit nuts_path
   end
 
-  scenario ""
+
 end
 
 

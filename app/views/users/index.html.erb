@@ -1,17 +1,13 @@
-<h1>
-Hello team nutshell!
-<%= session[:user_id]%>
-</h1>
+<ul>
+  <li class="header">NutShell</li>
+  <li class="signup"><%= link_to 'Sign Up!', new_user_path %></li>
+</ul>
 
-<%= link_to 'Sign Up!', new_user_path %> <br>
-or sign in
 
 <%= form_for :user,  url: {action: "login"} do |f| %>
 
-    <%= f.label :username, "username" %><br />
-    <%= f.text_field :username, placeholder: "Benzen" %><br>
+    <%= f.text_field :username, placeholder: "Username" %><br>
 
-    <%= f.label :password %><br />
     <%= f.password_field :password, placeholder: "Password"  %><br>
 
     <div class="text-center">

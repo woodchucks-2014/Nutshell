@@ -1,1 +1,5 @@
+<%= cloudinary_js_config %>
 <h1>Create a Nushell</h1>
+<%= form_tag(user_path(current_user), :method => :post) do  %>
+  <%= cl_image_upload_tag(:image_id) %>
+<% end %>

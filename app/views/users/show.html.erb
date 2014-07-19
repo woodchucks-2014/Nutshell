@@ -1,1 +1,11 @@
-<h1>Successful log in!</h1>
+<h1><%= @user.username %></h1>
+<h3><%= @user.first_name %></h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem eligendi architecto possimus cumque, commodi, molestiae ullam reiciendis fuga dolorem dolor sequi accusantium neque, eius eos, qui quos tempore voluptatum omnis.</p>
+<% @user.nuts.each do |nut| %>
+  <%= time_ago_in_words(nut.updated_at) %> ago. <br>
+  <% nut.url.each do |image| %>
+    <%= image_tag image, {height: 128} %>
+  <% end %> <br>
+  <b><%= @user.first_name %>'s day, in a nutshell. </b> <br>
+  <p><%= nut.content %></p> <br>
+<% end %>

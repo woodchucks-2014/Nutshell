@@ -9,9 +9,10 @@
 <body>
   <nav>
 
-    <!-- Below keeps throwing errors -->
     <% if current_user %>
       <%= link_to 'logout', sign_out_path(@user) %>
+      <%= link_to 'Home', :root  %>
+      <%= link_to @user.username, @user %>
     <% end %>
 
     </nav>

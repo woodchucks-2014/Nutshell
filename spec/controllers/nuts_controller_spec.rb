@@ -6,5 +6,10 @@ RSpec.describe NutsController, :type => :controller do
       get :new
       expect(:response).to render_template(:new)
     end
+
+    it "does something" do
+
+    end
+
   end
 end

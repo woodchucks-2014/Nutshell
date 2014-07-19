@@ -62,6 +62,16 @@ feature "ability to sign in as a user" do
       expect(current_path).to eq(users_path)
       expect(page).to have_content("Invalid Credentials")
   end
+
+    scenario "existing user has the option to create new Nutshell from nav bar" do
+      visit root_path
+      fill_in 'username', with: user.username
+      fill_in 'Password', with: user.password
+      click_button 'Log In'
+      expect(current_path).to eq(nuts_path)
+      expect(page).to have_selector(:link_or_button, 'Create!')
+
+    end
 end
 
 feature "ability to log out as an existing user" do
@@ -75,7 +85,6 @@ feature "ability to log out as an existing user" do
     click_button 'Log In'
     click_link 'Sign Out'
     expect(current_path).to eq(root_path)
-
   end
 
 end
@@ -84,9 +93,14 @@ feature "ability to view user profile page" do
   let(:user) { FactoryGirl.create :user}
   let(:nut) {FactoryGirl.create :nut}
 
-  scenario "sees one's own nutshells upon viewing profile page" do
-    visit nuts_path
-    expect(page).to have_content(nut.content)
+  scenario "has an ability to edit one's nutshell" do
+    pending "home page first"
+    visit root_path
+    fill_in 'username', with: user.username
+    fill_in 'Password', with: user.password
+    click_button 'Log In'
+    # expect(current_path).to eq(nuts_path)
+    expect(page).to have_selector(:link_or_button, 'Edit')
   end
 
 

@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
+include UsersHelper
   def index
+    if current_user
+      redirect_to nuts_path
+    end
   end
 
   def login
     @user = User.find_by(username: params[:user][:username])
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user), flash: {notice: "Successful log in!"}
+      # redirect_to user_path(@user), flash: {notice: "Successful log in!"}
+      redirect_to nuts_path, flash: {notice: "Successful log in!"}
     else
       redirect_to users_path, flash: {notice: 'Invalid credentials!' }
     end
@@ -16,7 +21,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params(params))
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user), flash: {notice: 'Successful log in!'}
+      # redirect_to user_path(@user), flash: {notice: 'Successful log in!'}
+      redirect_to nuts_path, flash: {notice: "Successful log in!"}
     else
       redirect_to new_user_path, flash: {notice: 'Failed'}
     end

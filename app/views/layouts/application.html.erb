@@ -9,9 +9,11 @@
 <body>
   <nav>
 
-    <% if session[:user_id] %>
-      <%= link_to 'logout', sign_out_path %>
-    <% end %>
+    <!-- Below keeps throwing errors -->
+    <%# if !session[:user_id].nil? %>
+      <%#= link_to 'logout', sign_out_path %>
+    <%# end %>
+
     </nav>
 <%= yield %>
 

@@ -5,7 +5,7 @@ describe Nut do
    it { should belong_to(:user)}
   let(:test_nut) {FactoryGirl.create :nut}
 
-  it "creates a nut object" do
+  it "requires either" do
     expect(test_nut).to be_valid
   end
 
@@ -15,5 +15,10 @@ describe Nut do
 
   it "returns an array of links for the user." do
     expect(test_nut.url).to be_kind_of Array# You guys should may need modify to suit your needs.
+  end
+
+  it "is invalid with both content and url missing" do
+    @test = Nut.create(content: nil, url: nil)
+    expect{@test.save!}.to raise_error
   end
 end

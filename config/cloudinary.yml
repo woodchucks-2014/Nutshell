@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: nutshell
+  api_key: '243915246899761'
+  api_secret: 99pkXxnTPmRN34UGmOF2rmVKko0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: nutshell
+  api_key: '243915246899761'
+  api_secret: 99pkXxnTPmRN34UGmOF2rmVKko0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: nutshell
+  api_key: '243915246899761'
+  api_secret: 99pkXxnTPmRN34UGmOF2rmVKko0
+  enhance_image_tag: true
+  static_image_support: false

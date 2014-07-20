@@ -18,29 +18,33 @@ class NutsController < ApplicationController
   def show
   end
 
+  def local_image_path(name)
+      Rails.root.join('uploads', name).to_s
+  end
+
   def create
-    # @pictures = {}
-    # @pictures = Cloudinary::Uploader.upload
-    # @nut = Nut.new(url: Cloudinary::Uploader.upload('')
-      # p params[:file]
     if params[:file].present?
-      # p " you made it through the if statement"
-      # @picture.url
-      # p @picture = ActionController::Base.helpers.root_path(@picture)
       # preloaded = Cloudinary::PreloadedFile.new(params[:image_id])
       # raise "Invalid upload signature" if !preloaded.valid?
       # @model.image_id = preloaded.identifier
-      # p params[:setup][:file]
       # @image = Cloudinary::Uploader.upload(params[:file])
-      # p @image
       # @picture = @image["secure_url"]
-      @uploader = PictureUploader.new
-      @uploader.store!('Yellow_Happy.jpg')
-      @uploader.retrieve_from_store!('Yellow_Happy.jpg')
-      redirect_to user_path(current_user)
+      # @uploader = PictureUploader.new
+      # @uploader.store!(params[:file])
+      # @uploader.retrieve_from_store!(params[:file])
+      # redirect_to user_path(current_user)
     end
-
-    # @nut = Nut.new(url: [@picture])
+    config_path = File.expand_path(File.join(File.dirname(__FILE__), params[:file]))
+    @nut = Nut.new
+    @nut.picture = params[:file]
+    p Rails.root
+    path = (Rails.root + params[:file]).to_s
+    path = local_image_path(params[:file])
+    p path
+    @image = Cloudinary::Uploader.upload(config_path)
+    # @nut.picture = File.open('')
+    # @nut.save!
+    p @image["secure_url"]
     # p @nut #not finished need to add content
     # @nut.url << @picture
     # if @uploader.save!

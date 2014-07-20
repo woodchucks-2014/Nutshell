@@ -36,6 +36,20 @@ describe User do
       expect{@user.save!}.to raise_error
     end
 
+    it "is invalid with duplicate email" do
+      @user = FactoryGirl.build(:user, email: 'test@test.com')
+      @user.save
+      @user2 = FactoryGirl.build(:user, email: 'test@test.com')
+      expect{@user2.save!}.to raise_error
+    end
+
+    it "is invalid with duplicate username" do
+      @user = FactoryGirl.build(:user, username: 'tester')
+      @user.save
+      @user2 = FactoryGirl.build(:user, username: 'tester')
+      expect{@user2.save!}.to raise_error
+    end
+
     xit "does not allow profanity to be used in first name field" do
       # pending "Just in case we have time to implement this"
     end

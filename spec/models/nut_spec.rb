@@ -6,7 +6,7 @@ describe Nut do
   let(:test_nut) {FactoryGirl.create :nut}
 
   it "creates a nut object" do
-    expect(test_nut).to be_instance_of(Nut)
+    expect(test_nut).to be_valid
   end
 
   it "creates a nut that has content" do

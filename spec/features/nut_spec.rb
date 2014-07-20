@@ -16,7 +16,7 @@ feature "ability to create new Nutshell" do
   #   expect(current_path).to eq(user_path(user))
   #   expect(page).to have_content("You just created a Nutshell!")
 
-  end
+  # end
 
 
 end

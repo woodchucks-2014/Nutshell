@@ -1,1 +1,17 @@
 <h1>Create a Nushell</h1>
+
+<%= notice %>
+
+<%= form_for :nut,  url: {action: "create"} do |f| %>
+
+    <%= f.label :content, "Content" %><br>
+    <%= f.text_area :content, placeholder: "Today was great..." %><br>
+
+    <%= f.label :url, "Url" %><br />
+    <%= f.password_field :url, placeholder: "your pic url..."  %><br>
+
+    <div class="text-center">
+      <%= f.submit "Create!"%>
+    </div>
+
+<% end %>

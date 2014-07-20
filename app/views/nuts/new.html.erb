@@ -1,5 +1,8 @@
 <%= cloudinary_js_config %>
 <h1>Create a Nushell</h1>
-<%= form_tag(user_path(current_user), :method => :post) do  %>
+<%= form_for :nut, url: nuts_path do |f| %>
+
   <%= cl_image_upload_tag(:image_id) %>
+
+  <%= f.submit "Nut it Up!"%>
 <% end %>

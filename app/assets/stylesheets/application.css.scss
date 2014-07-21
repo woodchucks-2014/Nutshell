@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.logo {
+  font-family: 'Unkempt', cursive;
+  font-size: 7vw;
+  color: white;
+  text-align: center;
+}
+
+body {
+  background-color: #E1BB8A;
+}
+
+.main {
+  font-family: 'Open Sans Condensed', sans-serif;
+  h1 {font-family: 'Unkempt', cursive;}
+  // img {border:1px solid black;}
+}
+
+nav {
+  background-color:#9FC7A2;
+  // padding-top: 10px;
+  // padding-bottom: 5px;
+  padding: 10px 5px 5px 5px;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -10px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  button {
+  height: 40px;
+  background: #9FC7A2;
+}
+
+  button:hover {
+  background-color: #5D8F72;
+  a {color: white;}
+}
+
+//   a {
+//     text-decoration: none;
+//     color: black;
+//   }
+// }
+
+//  .login:hover {
+//   background-color: #5D8F72;
+//   color: white;
+//   a {
+//     color: white;
+//   }
+
+  .left-nav {
+    text-align: left;
+    display: inline;
+  }
+
+  .right-nav {
+    text-align: right;
+    float: right;
+    display: inline;
+  }
+}
+
+.nut_logo img {
+  max-width: 8vw;
+  min-width: 75px;
+}
+
+.cover-pic {
+    z-index: -9000;
+    height: 100%;
+    width:100%;
+    text-align:center;
+    background:image-url('blured_cover.jpg') no-repeat center;
+    background-size:cover;
+    position: fixed;
+    left:0;
+    top: 0;
+    }
+// body {
+//   background: url(/images/cover-pic.jpg) no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
+
+.cover-form {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color:white;
+  font-weight: bold;
+  text-align: center;
+  // padding-top: 15%;
+  margin-top: 15%;
+  width:20%;
+  margin-left:auto;
+  margin-right:auto;
+
+  input:not([type=submit]):not([type=file])  {
+    border: 10px solid white;
+  }
+}
+
+ .login {
+  width: 100px;
+  background: #9FC7A2;
+
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+ .login:hover {
+  background-color: #5D8F72;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.nut_image {
+  border: 4px solid grey;
+  height: 128px;
+  overflow: hidden;
+  img {
+  border: 1px solid black;
+  }
+}
+

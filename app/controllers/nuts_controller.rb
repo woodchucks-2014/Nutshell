@@ -34,4 +34,12 @@ class NutsController < ApplicationController
       redirect_to user_path
     end
   end
+
+  def destroy
+    current_user
+    @nut = Nut.find(params[:id])
+    @nut.destroy
+
+    redirect_to nuts_path
+  end
 end

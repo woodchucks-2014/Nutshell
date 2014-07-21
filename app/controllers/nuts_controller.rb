@@ -35,6 +35,20 @@ class NutsController < ApplicationController
     end
   end
 
+  def edit
+    @nut = Nut.find(params[:id])
+  end
+
+  def update
+    @nut = Nut.find(params[:id])
+
+    if @nut.update(params[:content])
+      redirect_to nuts_path
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     current_user
     @nut = Nut.find(params[:id])
@@ -42,4 +56,10 @@ class NutsController < ApplicationController
 
     redirect_to nuts_path
   end
+
+  private
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
+
 end

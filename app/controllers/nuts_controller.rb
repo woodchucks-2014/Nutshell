@@ -20,16 +20,12 @@ class NutsController < ApplicationController
 
   def create
     uploaded_picture = params[:picture]
-    p "------------------------------"
     p filename = Rails.root.join('public', 'uploads', uploaded_picture.original_filename)
-    p "-------------------------------"
     File.open(filename, 'wb') do |file|
       file.write(uploaded_picture.read)
     end
 # Insert code here to send to
-    p "------------------------------"
-  p image = Cloudinary::Uploader.upload(filename)
-    p "------------------------------"
+  image = Cloudinary::Uploader.upload(filename)
   @nut = Nut.new(url: [image["secure_url"]], user_id: current_user.id)
     if @nut.save
       redirect_to nuts_path

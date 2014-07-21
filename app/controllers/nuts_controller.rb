@@ -21,7 +21,7 @@ class NutsController < ApplicationController
 
   def create
     uploaded_picture = params[:picture]
-    filename = Rails.root.join('public', 'image_cache', uploaded_picture.original_filename)
+    filename = Rails.root.join('public', 'uploads', uploaded_picture.original_filename)
     File.open(filename, 'wb') do |file|
       file.write(uploaded_picture.read)
     end

@@ -41,6 +41,7 @@ gem 'bcrypt', '~> 3.1.7'
 # For cloudinary integration
 gem 'carrierwave'
 gem 'cloudinary'
+gem "mini_magick"
 
 
 

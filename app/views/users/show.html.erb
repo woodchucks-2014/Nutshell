@@ -6,7 +6,7 @@
 <% if @user == current_user %>
   <%= link_to 'Edit', edit_nut_path(nut) %>
   <%= link_to 'Destroy', nut_path(nut),
-                    method: :delete, data: { confirm: 'Are you sure?' } %>
+                    method: :delete %>
 <% end %>
   <%= time_ago_in_words(nut.updated_at) %> ago. <br>
   <% nut.url.each do |image| %>

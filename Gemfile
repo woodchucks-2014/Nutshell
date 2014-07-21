@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 group :production, :staging do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'faker'
 end
 
 group :development, :test do

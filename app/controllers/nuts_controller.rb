@@ -54,7 +54,7 @@ class NutsController < ApplicationController
     @nut = Nut.find(params[:id])
     @nut.destroy
 
-    redirect_to nuts_path
+    redirect_to :back
   end
 
   private

@@ -4,14 +4,16 @@
 <%= form_for :user,  url: {action: "login"} do |f| %>
 
     <%= f.label :username, "username" %><br />
-    <%= f.text_field :username, placeholder: "Benzen" %><br>
+    <%= f.text_field :username %><br>
 
     <%= f.label :password %><br />
-    <%= f.password_field :password, placeholder: "Password"  %><br>
+    <%= f.password_field :password  %><br>
 
     <div class="text-center">
       <%= f.submit "Log In", :class => "login"%>
     </div>
+
+
 
 
 <% end %>

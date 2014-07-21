@@ -12,13 +12,22 @@
   <nav>
 
   <% if current_user %>
-    <%= link_to 'Sign Out', sign_out_path(current_user) %>
-    <%= link_to 'Home', :root  %>
-    <%= link_to current_user.username, current_user %>
-    <%= link_to 'Create!', new_nut_path %>
+  <nav>
+    <div class="left-nav">
+    <button><%= link_to current_user.username, current_user %></button>
+    <button><%= link_to 'Home', :root  %></button>
+    </div>
+    <div class="right-nav">
+    <button><%= link_to 'Create!', new_nut_path %></button>
+    <button><%= link_to 'Sign Out', sign_out_path(current_user) %></button>
+    </div>
+  </nav>
   <% end %>
 
     </nav>
+    <div class="main">
+
 <%= yield %>
+    </div>
 </body>
 </html>

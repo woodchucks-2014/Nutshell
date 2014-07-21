@@ -1,26 +1,29 @@
 <div class="cover-pic">
     <div class="cover-form">
 
+        <span class="logo">Nutshell</span> <br>
+        <span class="nut_logo"><%= image_tag "acorn-dark-green.png" %></span>
+
 <%= flash[:notice] %>
     <%= form_for :user,  url: {action: "create"} do |f| %>
 
     <%= f.label :first_name, "First name" %><br />
-    <%= f.text_field :first_name, placeholder: "first name" %><br>
+    <%= f.text_field :first_name %><br>
 
     <%= f.label :username, "username" %><br />
-    <%= f.text_field :username, placeholder: "username" %><br>
+    <%= f.text_field :username  %><br>
 
     <%= f.label :email, "Email" %><br />
-    <%= f.text_field :email, placeholder: "email" %><br>
+    <%= f.text_field :email  %><br>
 
     <%= f.label :password %><br />
-    <%= f.password_field :password, placeholder: "password"  %><br>
+    <%= f.password_field :password   %><br>
 
     <%= f.label :password_confirmation, "Confirm password" %><br />
-    <%= f.password_field :password_confirmation, placeholder: "confirm password"  %><br>
+    <%= f.password_field :password_confirmation  %><br>
 
     <div class="text-center">
-      <%= f.submit "Sign Me Up!"%>
+      <%= f.submit "Sign me up!", :class => "login"%>
     </div>
 
 <% end %>

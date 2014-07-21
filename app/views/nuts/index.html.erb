@@ -1,11 +1,13 @@
+
 <h1>Welcome <%= @user.first_name %></h1>
 <br>
 <% @nuts.each do |nut| %>
 
   <h2><%= link_to nut.user.first_name, user_path(nut.user_id) %></h2> <br>
-
+  <div class="nut_image">
   <% nut.url.each do |image| %>
     <%= image_tag image, {height: 128} %>
   <% end %>
+  </div>
   <br>
 <% end %>

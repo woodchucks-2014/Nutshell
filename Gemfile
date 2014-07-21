@@ -15,6 +15,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # Rspec
+group :production, :staging do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'faker'

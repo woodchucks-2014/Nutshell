@@ -1,5 +1,6 @@
 <h1><%= @user.username %></h1>
 <h3><%= @user.first_name %></h3>
+<h1>Bio:</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem eligendi architecto possimus cumque, commodi, molestiae ullam reiciendis fuga dolorem dolor sequi accusantium neque, eius eos, qui quos tempore voluptatum omnis.</p>
 <% @user.nuts.each do |nut| %>
   <%= time_ago_in_words(nut.updated_at) %> ago. <br>

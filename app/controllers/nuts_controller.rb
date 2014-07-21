@@ -5,7 +5,7 @@ class NutsController < ApplicationController
   def index
     if current_user
       @user = User.find(session[:user_id])
-      @nuts = Nut.all
+      @nuts = Nut.all.reverse
     else
       redirect_to :root
     end

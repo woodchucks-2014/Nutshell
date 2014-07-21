@@ -42,7 +42,7 @@ class NutsController < ApplicationController
   def update
     @nut = Nut.find(params[:id])
 
-    if @nut.update(params[:content])
+    if @nut.update(content: params[:content])
       redirect_to nuts_path
     else
       render 'edit'

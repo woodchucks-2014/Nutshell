@@ -1,7 +1,8 @@
 <h1>In a Nutshell...</h1>
-<%= form_tag(multipart: true, method: :patch) do %>
-  <%= file_field_tag :picture %>
-  <%= text_field_tag :content %>
+<%= form_tag({action: :update}, multipart: true, method: :patch) do %>
+  <!-- Backlog -->
+  <%#= file_field_tag :picture %>
+  <%= text_area_tag :content %>
   <div class='text-center'>
     <%= submit_tag('Upload') %>
   </div>

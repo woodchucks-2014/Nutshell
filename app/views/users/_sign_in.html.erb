@@ -1,3 +1,4 @@
+
 <%= notice %>
 
 <%= form_for :user,  url: {action: "login"} do |f| %>
@@ -9,7 +10,9 @@
     <%= f.password_field :password, placeholder: "Password"  %><br>
 
     <div class="text-center">
-      <%= f.submit "Log In"%>
+      <%= f.submit "Log In", :class => "login"%>
     </div>
 
+
 <% end %>
+

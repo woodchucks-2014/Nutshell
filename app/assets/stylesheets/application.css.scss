@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.logo {
+  font-family: 'Unkempt', cursive;
+  font-size: 80px;
+  color: white;
+}
+
+.cover-pic {
+    z-index: -9000;
+    height: 100%;
+    width:100%;
+    text-align:center;
+    background:image-url('blured_cover.jpg') no-repeat center;
+    background-size:cover;
+    position: fixed;
+    left:0;
+    top: 0;
+    }
+// body {
+//   background: url(/images/cover-pic.jpg) no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
+
+.cover-form {
+  text-align: center;
+  // padding-top: 15%;
+  margin-top: 15%;
+  width:20%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+ .login {
+  width: 100px;
+  background: #9FC7A2;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+ .login:hover {
+  background-color: #5D8F72;
+  color: white;
+  a {
+    color: white;
+  }
+}
+

@@ -1,17 +1,8 @@
-<h1>Create a Nutshell</h1>
-
-<%= notice %>
-
-<%= form_for :nut,  url: {action: "create"} do |f| %>
-
-    <%= f.label :content, "Content" %><br>
-    <%= f.text_area :content, placeholder: "Today was great..." %><br>
-
-    <%= f.label :url, "Url" %><br />
-    <%= f.password_field :url, placeholder: "your pic url..."  %><br>
-
-    <div class="text-center">
-      <%= f.submit "Create!"%>
-    </div>
-
+<h1>In a Nutshell...</h1>
+<%= form_tag({action: :create}, multipart: true) do %>
+  <%= file_field_tag :picture %>
+  <%= text_field_tag :content %>
+  <div class='text-center'>
+    <%= submit_tag('Upload') %>
+  </div>
 <% end %>

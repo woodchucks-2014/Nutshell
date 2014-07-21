@@ -20,13 +20,18 @@ class NutsController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
-    @nut = Nut.new(content: params[:content], url: [params[:url]], user_id: params[@user.id])
-    if @nut.save
-      redirect_to users_path(@user), flash: {notice: "You just created a Nutshell!"}
-    else
-      redirect_to new_nut_path
+    uploaded_picture = params[:picture]
+    p filename = Rails.root.join('public', 'uploads', uploaded_picture.original_filename)
+    File.open(filename, 'wb') do |file|
+      file.write(uploaded_picture.read)
     end
-
+# Insert code here to send to
+  image = Cloudinary::Uploader.upload(filename)
+  @nut = Nut.new(url: [image["secure_url"]], user_id: current_user.id)
+    if @nut.save
+      redirect_to nuts_path
+    else
+      redirect_to user_path
+    end
   end
 end

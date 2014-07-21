@@ -17,9 +17,6 @@ class NutsController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @nut = Nut.find(@user.id)
-
-    redirect_to :back
   end
 
   def create
@@ -54,10 +51,10 @@ class NutsController < ApplicationController
 
   def destroy
     current_user
-    @nut = Nut.find(params[:id])
-    @nut.destroy
-
-    redirect_to :back
+    # @nut = Nut.find(params[:id])
+    # @nut.destroy
+    #
+    redirect_to :root
   end
 
   private

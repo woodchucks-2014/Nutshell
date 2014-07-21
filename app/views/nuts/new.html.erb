@@ -1,7 +1,8 @@
-
 <h1>In a Nutshell...</h1>
 <%= form_tag({action: :create}, multipart: true) do %>
   <%= file_field_tag :picture %>
   <%= text_field_tag :content %>
-  <%= submit_tag('Upload') %>
+  <div class='text-center'>
+    <%= submit_tag('Upload') %>
+  </div>
 <% end %>

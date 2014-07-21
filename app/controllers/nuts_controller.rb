@@ -12,10 +12,11 @@ class NutsController < ApplicationController
   end
 
   def new
-    # current_user
+    @user = current_user
   end
 
   def show
+    @user = User.find(session[:user_id])
   end
 
   def create

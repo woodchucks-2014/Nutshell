@@ -3,7 +3,7 @@
 <br>
 <% @nuts.each do |nut| %>
 
-  <h2><%= link_to nut.user.first_name, user_path(nut.user) %></h2> <br>
+  <h2><%= link_to nut.user.first_name, user_path(nut.user_id) %></h2> <br>
 
   <% nut.url.each do |image| %>
     <%= image_tag image, {height: 128} %>

@@ -6,8 +6,9 @@ describe User do
   let(:user) {FactoryGirl.create :user}
 
   it "creates a user with a first name, email, username, and password" do
-    expect(user).to be_instance_of(User)
+    expect(user).to be_valid
   end
+
   context "validations"
 
     it "creates a user with a valid email address" do
@@ -18,6 +19,35 @@ describe User do
     it "raises an error if user password and confirmation do not pass." do
       @user = FactoryGirl.build(:user, password: "lol")
       expect{@user.save!}.to raise_error
+    end
+
+    it "raises an error if user does not include first name." do
+      @user = FactoryGirl.build(:user, first_name: nil)
+      expect{@user.save!}.to raise_error
+    end
+
+    it "raises an error if user does not include email." do
+      @user = FactoryGirl.build(:user, email: nil)
+      expect{@user.save!}.to raise_error
+    end
+
+    it "raises an error if user does not include password." do
+      @user = FactoryGirl.build(:user, password: nil)
+      expect{@user.save!}.to raise_error
+    end
+
+    it "is invalid with duplicate email" do
+      @user = FactoryGirl.build(:user, email: 'test@test.com')
+      @user.save
+      @user2 = FactoryGirl.build(:user, email: 'test@test.com')
+      expect{@user2.save!}.to raise_error
+    end
+
+    it "is invalid with duplicate username" do
+      @user = FactoryGirl.build(:user, username: 'tester')
+      @user.save
+      @user2 = FactoryGirl.build(:user, username: 'tester')
+      expect{@user2.save!}.to raise_error
     end
 
     xit "does not allow profanity to be used in first name field" do

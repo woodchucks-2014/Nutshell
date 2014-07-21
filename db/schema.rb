@@ -26,11 +26,12 @@ ActiveRecord::Schema.define(version: 20140720194805) do
 
   create_table "nuts", force: true do |t|
     t.text     "content"
-    t.string   "url",        array: true
+    t.string   "url",                    array: true
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture"
+    t.integer  "votes",      default: 0
   end
 
   create_table "users", force: true do |t|
